@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-action-bar
+  [title]="title"
+  [hasMenu]="false"
+></app-action-bar>
+<GridLayout rows="0,2*,*,4*,2*,*" >
+  <StackLayout row="1" col="0">
+    <Label class="h2 hongkong" text="EXTRA"></Label>
+  </StackLayout>
+  <StackLayout row="2" col="0">
+    <Label class="h3" text="{{ slogan }}"></Label>
+  </StackLayout>
+  <StackLayout class="Image" row="3">
+    <Image src="~/assets/images/ser.png" ></Image>
+  </StackLayout>
+  <StackLayout class="Image" row="4">
+    <Button
+      text="connexion"
+      class="btn btnText"
+      (tap)="onSubmit()"
+      *ngIf="!isLoading"
+      row="4"
+    ></Button>
+  </StackLayout>
+  <StackLayout class="Image" row="5">
+    <app-footer></app-footer>
+  </StackLayout>
+</GridLayout>
