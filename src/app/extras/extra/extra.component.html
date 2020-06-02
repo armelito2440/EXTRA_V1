@@ -1,0 +1,64 @@
+<!-- <p>extra works!</p> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <app-calendar></app-calendar>
+    </div>
+  </div>
+</div> 
+
+  <div class="container">
+    <div class="row"> 
+
+      <div class="col-sm-12 text-center">
+        <h1 class="h1">{{ title }}</h1>
+        
+        <h4 class="h4"> {{ subtitle }}</h4>
+        <p id="nothing" class="info-text mat-body-1"
+          *ngIf="missions?.length <= 0">Vous n'avez aucune mission pour le moment<br><br></p>
+          
+        <p id="list" class="info-text mat-body-1"
+          *ngIf="missions?.length <= 0"><a href="#">Voir la liste des missions</a></p> -->
+          <!-- <div>
+            <img [src]="cheminImage"/>
+          </div>   -->
+
+      <!-- PREMIER MAT-ACCORDION -->
+
+    <div>
+
+      <mat-expansion-panel *ngFor="let mission of missions">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ mission.intitule }}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ mission.commentaire }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        
+        <div class="container-fluid">
+          <div class="row">
+      
+             COLONNE 1 
+            <div class="col-sm-4 text-center">
+              <p>Lieu : {{ mission.lieu }}</p>
+            </div>
+            <div class="col-sm-4 text-center">
+              <p>Date : {{ mission.date }}</p>
+            </div>
+            <div class="col-sm-4 text-center">
+              <p>Durée : {{ mission.duree }}</p>
+            </div>
+          
+          </div>
+        </div>
+
+        <mat-action-row>
+          <button mat-button (click)="onSubmit()">Click me</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+    </div>
+  
