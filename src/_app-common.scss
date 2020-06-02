@@ -1,0 +1,170 @@
+@import "~@nativescript/theme/core";
+@import "~@nativescript/theme/blue";
+@import "../src/theme/colors";
+
+// @import '~bootstrap/dist/css/bootstrap.min.css';
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+
+
+Font icon class
+
+.fab {
+    font-family: "Font Awesome 5 Brands", "fa-brands-400";
+    font-weight: 400;
+}
+
+
+.fas {
+    font-family: "Font Awesome 5 Free", "fa-solid-900";
+    font-weight: 900;
+}
+
+.far {
+    font-family: "Font Awesome 5 Free", "fa-regular-400";
+    font-weight: 400;
+}
+.fa {
+    font-family: 'FontAwesome', 'Font-Awesome';
+  }
+
+// BACKGROUND TOUTES LES PAGES
+ body {
+    height: 100%;
+    background: radial-gradient(#1b2735 0%, #090a0f 100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+
+   }
+
+// FIN CSS BACKGROUND EXTRA 
+
+
+.igx-typography h5, p, h1 {
+    margin-top : 0rem !important;
+    margin-bottom : 0rem !important;
+    line-height: 3rem !important;
+}
+
+
+// TITRE EXTRA 
+@font-face {
+    font-family: "SEGA";
+    src: url("src/fonts/SEGA.TTF");
+}
+
+
+.igx-typography h1 {
+    margin-top : 10% !important;
+    font-family: 'SEGA';
+    font-size : 2rem !important;
+    background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+     
+}
+
+// FIN DU TITRE 
+
+
+
+.igx-typography h3.h3 {
+    
+    color: $lt-gris;
+    font-size: 2.0rem;
+    font-family: 'Shrikhand';
+}
+
+.form-control {
+    font-family: 'Lato';
+    display:bloc; 
+    margin: auto;
+    width: 80%;
+    margin-bottom: 5px;
+    
+    }
+
+label {
+    font-family: 'Lato';
+    color: $lt-orange;
+}
+p, a { 
+   
+    font-family : 'Lato';
+    color :#666547;
+}
+
+// a {
+//     color :#666547;
+//     font-family : 'Lato';
+// }
+
+
+
+.mat-button, .btn {
+    font-family: 'Bungee', cursive;
+    //border-radius : 30px;
+    background-color : $lt-orange;
+    color : $lt-creme;;
+
+}
+.h2 {
+    font-family: 'Bungee Shade', 'BungeeShade-Regular', cursive;
+    font-size : 10em;
+    color: $lt-orange;
+}
+
+
+.p {
+    font-family : 'Oswald', cursive;
+    //background-color : #ffe28a; 
+    color : $lt-gris;
+    padding : 10px;
+}
+
+.h4 {
+    color : $lt-creme;
+}
+
+#nothing {
+    color : $lt-orange;
+    font-size : 2.5em;
+}
+
+#list {
+    color : $lt-gris;
+    font-size : 2.1em;
+}
+
+.form_address {
+   padding : 10px;
+   
+   
+}
+
+.form_etablissement {
+    padding : 10px;
+    //background-color : cornsilk; 
+    border-radius : 20px;
+    
+ }
+
+.imgAddress {
+    
+    width : 70%;
+    // position: absolute; z-index: 1;
+}
+GridLayout {
+    background-color: $lt-background-color;
+}
+DockLayout {
+    background-color: $lt-background-color;
+}
+.component_background {
+    background-color: $lt-creme;
+}
+.fullHeight {
+    height: 100%;
+}
+
