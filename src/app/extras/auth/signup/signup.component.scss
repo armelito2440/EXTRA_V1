@@ -1,0 +1,37 @@
+@import "../../../../theme/colors";
+
+.label1 {
+    text-align: center;
+}
+.label2 {
+    text-align: center;
+    color: $btn-color;
+}
+.label3 {
+    text-align: center;
+    color: $btn-color;
+    margin: 1rem;
+}
+
+GridLayout {
+    background-color: $lt-background-color;
+}
+.categories {
+    margin-left: 8;
+    margin-right: 8;
+    color: black;
+}
+.marginBottom {
+    margin-bottom: 5;
+    margin-top: 5;
+}
+.disabled {
+    color: black;
+    background-color: $lt-background-color;
+}
+.activity {
+    color: $lt-creme;
+}
+
+
+// 

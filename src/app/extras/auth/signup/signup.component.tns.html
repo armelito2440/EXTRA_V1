@@ -1,0 +1,130 @@
+
+    <app-action-bar
+  [title]="title"
+  [showBackButton]="true"
+  [hasMenu]="false"
+></app-action-bar>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+  loaded="pageLoaded" 
+  xmlns:dd="nativescript-drop-down">
+<GridLayout rows="*,5*,*,*,*" class="form" [formGroup]="form" *ngIf="signupPage==='user'">
+  <StackLayout class="input-field"  row="1">
+    <TextField
+      hint="email@email.com"
+      class="input marginBottom"
+      returnKeyType="next"
+      keyboardType="email"
+      [autocorrect]="false"
+      autocapitalizationType="none"
+      formControlName="email"
+      [isEnabled]="isCreate"
+      [ngClass]='{disabled: !isCreate}'
+      #emailEl
+    ></TextField>
+    <TextField
+      class="input marginBottom"
+      returnKeyType="next"
+      [autocorrect]="false"
+      autocapitalizationType="none"
+      [secure]="true"
+      hint="Mot de passe"
+      formControlName="password"
+      [isEnabled]="isCreate"
+      [ngClass]='{disabled: !isCreate}'
+      #passwordEl
+    ></TextField>
+    <TextField
+      class="input marginBottom"
+      returnKeyType="next"
+      [autocorrect]="false"
+      autocapitalizationType="none"
+      [secure]="true"
+      hint="confirmation de mot de passe"
+      formControlName="password2"
+      *ngIf="isCreate"
+      #passwordEl2
+    ></TextField>
+    <TextField
+      class="input marginBottom"
+      returnKeyType="next"
+      [autocorrect]="false"
+      autocapitalizationType="words"
+      hint="nom"
+      formControlName="last_name"
+      #last_nameEl
+    ></TextField>
+    <TextField
+      class="input marginBottom"
+      returnKeyType="done"
+      [autocorrect]="false"
+      autocapitalizationType="words"
+      hint="prenom"
+      formControlName="first_name"
+      (returnPress)="onDone()"
+      #first_nameEl
+    ></TextField>
+    <StackLayout>
+    <StackLayout class="input-field categories" row="2">
+      <app-categories [value]="_cat"></app-categories>
+    </StackLayout>
+  </StackLayout>
+
+
+  </StackLayout>
+  <ScrollView>
+    <StackLayout>
+    <Label
+      class="error"
+      *ngIf="!emailControlIsValid"
+      text="Please enter a valid email."
+    ></Label>
+    <Label
+      class="error"
+      *ngIf="!passwordControlIsValid"
+      text="Must be 6+ characters long."
+    ></Label>
+    <Label
+      class="error"
+      *ngIf="!password2ControlIsValid"
+      text="passwords don't match."
+      ></Label>
+    </StackLayout>
+  </ScrollView>
+  <Button
+    text="{{ update }}"
+    class="btn btnText"
+    (tap)="onAddress()"
+    *ngIf="!isLoading"
+    [isEnabled]="form.valid || true"
+    row="3"
+  ></Button>
+
+  <StackLayout class="input-field" row="4" *ngIf="isLogin">
+    <Label class="label1" text="Don't have an account?"></Label>
+    <Label class="label2" text="SIGN UP NOW" (tap)="onSwitch()"></Label>
+  </StackLayout>
+  <StackLayout class="input-field" row="5" *ngIf="!isLogin">
+    <Label class="label1" text="Already have an account?"></Label>
+    <Label class="label2" text="SIGN IN NOW" (tap)="onSwitch()"></Label>
+  </StackLayout>
+  <ActivityIndicator color="yellow" class="activity" [busy]="isLoading"></ActivityIndicator>
+</GridLayout>
+<GridLayout rows="auto, auto, *" *ngIf="signupPage==='address'">
+  <StackLayout row="0">
+    <app-address [userId]="userId" [addresss]="address" (newAddress)="onChangeAdress($event)"></app-address>
+  </StackLayout>
+  <StackLayout row="1"> 
+    <app-telephon [userId]="userId" (newTelephone)="onChangePhone($event)"></app-telephon>
+  </StackLayout>
+  <StackLayout row="2">
+    <Button
+    text="{{ update }}"
+    class="btn btnText"
+    (tap)="onSubmit()"
+    *ngIf="!isLoading"
+    [isEnabled]="form.valid || true"
+    row="3"
+  ></Button>
+  </StackLayout>
+</GridLayout>
+</Page>

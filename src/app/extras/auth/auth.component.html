@@ -1,0 +1,39 @@
+<!-- <p>auth works!</p> -->
+
+
+<!--FOMULAIRE CONNEXION DIRECTE-->
+
+
+
+    <div class="container"> 
+
+      <div class="row"> 
+    
+         <!-- COLONNE 1 -->
+        <div class="col-sm-4"></div>
+        
+        
+        <!-- COLONNE 2 -->
+        <div class="col-sm-4"> 
+            
+            <h3 class="h3 text-center">Se connecter</h3>
+            
+
+        <form class="form1" [formGroup]=form>
+            <div class="form-group text-center">
+              <input class="form-control text-center" type="text" placeholder="email" formControlName="email"  #emailEl>
+              <input class="form-control text-center" type="password"  placeholder="mot de passe" formControlName="password" #passwordEl>
+              <p class="forgot"><a href="signup">Pas encore de compte ? Crééz en un !</a></p>
+              <button type="submit" class="btn btn-default" (click)="onSubmit()">connexion</button>
+              <p><a href="#">mot de passe oublié ?</a></p><br>
+            </div>
+         </form>
+            
+        </div>
+
+
+        <!-- COLONNE 3 -->
+        <!-- <div class="col-sm-4"><img [src]="cheminImage"></div> -->
+
+      </div>
+    </div>

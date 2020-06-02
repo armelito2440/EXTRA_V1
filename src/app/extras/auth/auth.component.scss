@@ -1,0 +1,26 @@
+/* Add mobile styles for the component here.  */
+@import "../../../theme/colors";
+
+.label1 {
+    text-align: center;
+}
+.label2 {
+    text-align: center;
+    color: $btn-color;
+}
+.label3 {
+    text-align: center;
+    color: $btn-color;
+    margin: 1em;
+}
+
+
+.activity {
+    color: $lt-creme;
+}
+
+img {
+    width: 45%;
+    padding-top: 50px;
+}
+
