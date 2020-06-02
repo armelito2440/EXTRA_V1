@@ -1,0 +1,32 @@
+
+<!-- FORMULAIRE ADDRESS SI EXTRA -->
+  
+                    
+<div class="form_address">
+    <form [formGroup]=form class="form-group">
+                            
+        <p>Merci de renseigner votre adresse</p>
+        <input class="form-control" (input)="onDone()" type="text" id="num" placeholder="n°" formControlName="inputNum">
+        <input class="form-control" (input)="onDone()" type="address" id="nom_voie" placeholder="nom de la voie" formControlName="inputRue">
+        <label class="col" *ngIf="!form.controls['inputRue'].valid">Le nom de la rue n'est pas valide</label>
+                            
+        <input class="form-control" (input)="onDone()" type="text" id="code_postal" placeholder="code postal" formControlName="inputCP">
+        <label class="col" *ngIf="!form.controls['inputCP'].valid">Le code postal n'est pas valide</label>
+        <!-- <div class="col-sm-4 center-block" *ngIf="this.auth.isExtra()"></div> -->
+
+        <input class="form-control" (input)="onDone()" type="text" id="ville" placeholder="ville" formControlName="inputVille">
+        <br>
+        <p><button *ngIf="btnSubmit" type="submit" class="btn btn-default" (click)="onSubmit()">valider</button></p>
+    </form>
+                        
+</div>
+                
+
+  
+  
+
+
+    
+
+  
+  
