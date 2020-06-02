@@ -1,0 +1,22 @@
+<!-- 
+<DockLayout height="5000" stretchLastChild="true">
+<ScrollView class="scrollView" dock="top" height="500">
+    <StackView *ngFor="let mission of missions; index as i">
+        <app-mission [mission]="mission"></app-mission>
+    </StackView>
+    <StackView *ngFor="let mission of missions; index as i">
+        <app-mission [mission]="mission"></app-mission>
+    </StackView>
+</ScrollView>
+</DockLayout> -->
+
+
+<DockLayout height="5000" stretchLastChild="true">
+    <ScrollView class="scrollView" dock="top" height="500">
+        <StackLayout>
+        <StackLayout *ngFor="let mission of missions">
+            <app-mission [mission]="mission"></app-mission>
+        </StackLayout>
+    </StackLayout>
+    </ScrollView>
+    </DockLayout>
