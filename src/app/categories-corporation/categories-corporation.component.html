@@ -1,0 +1,8 @@
+<p>votre corporation : </p>
+
+<form class='form' [formGroup]="corporationForm">
+    <select (change)="callCorporation($event)" formControlName="corporationControl">
+        <option [value]="corporation" *ngFor="let corporation of corporations">
+                        {{ corporation }}</option>
+    </select>
+</form>
