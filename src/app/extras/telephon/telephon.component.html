@@ -1,0 +1,14 @@
+<form [formGroup]="telephonForm">
+
+    <p>{{ userId }}</p>
+    <label for="phone"></label>
+    <input class="form-control" (input)="onDone()" type="text" id="phone" name="phone" 
+    placeholder = "Téléphone" formControlName="phone">
+    <input class="form-control" (input)="onDone()" type="text" id="phonefix" name="phonefix" 
+    placeholder="Téléphone fixe" formControlName="phonefix">
+    <small></small>
+    <p><button *ngIf="btnSubmit" type="submit" class="btn btn-default" (click)="onSubmit()">valider</button></p>
+    
+                
+</form>
+
