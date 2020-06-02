@@ -1,0 +1,12 @@
+<h3 class="h3">Mes disponibilités</h3>
+<h4 class="h4">Choisis les dates pour lesquelles tu souhaites effectuer une mission</h4><br> 
+		
+<div igxLayout igxLayoutDir="columns" igxLayoutItemAlign="center"> 
+	<igx-calendar selection="single" (onSelection)="Selection($event)"></igx-calendar>
+	<br>
+	<p><a href="https://github.com/IgniteUI/igniteui-angular/blob/master/projects/igniteui-angular/src/lib/calendar/README.md" target="_blank">README</a> or the 
+	<a href="https://www.infragistics.com/products/ignite-ui-angular/angular/components/calendar.html" target="_blank">official documentation</a>.</p>
+	<br>
+	<p><button type="submit" class="btn btn-default" (click)="onSubmit()">valider</button></p>
+</div> 
+		
