@@ -1,0 +1,33 @@
+<Button text="mission-bar works!" class="btn btn-primary"></Button>
+<ActionBar #missionBar [title]="title" class="lt-highlight" (loaded)="onLoadedActionBar()">
+  <Label text="{{ title }}"></Label>
+  <NavigationButton
+    text="Back"
+    android.systemIcon="ic_menu_back"
+    *ngIf="canGoBack"
+    (tap)="onGoBack()"
+  ></NavigationButton>
+  <NavigationButton
+    *ngIf="android && hasMenu"
+    icon="res://menu_black"
+    (tap)="onToggleMission()"
+  ></NavigationButton>
+  <ActionItem
+    *ngIf="!android && hasMenu"
+    ios.position="left"
+    (tap)="onToggleMission()"
+  >
+
+  </ActionItem>
+  <ActionItem>
+      <Label
+      *ngIf="hasLogout"
+      text="&#xf2f5;"
+      ios:class="fa p-5"
+      android:class="fas"
+      android:fontSize="24"
+      (tap)="onLogout()"
+    ></Label>
+  </ActionItem>
+  <ng-content></ng-content>
+</ActionBar>
