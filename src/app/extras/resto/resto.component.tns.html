@@ -1,0 +1,26 @@
+  <app-action-bar
+  [title]="title"
+  [showBackButton]="true"
+  [hasMenu]="true"
+></app-action-bar>
+
+<!-- <DockLayout stretchLastChild="true">
+<GridLayout rows="50, *" cols="*">
+  <StackLayout row="0" class='missions'>
+    <Button text="Nouveau Etablissement"></Button>
+  </StackLayout>
+  <StackLayout row="1" class='missions'>
+    <app-missions class='missions' [missions]='missions'></app-missions>
+  </StackLayout>
+</GridLayout>
+</DockLayout> -->
+
+<DockLayout height="100%" stretchLastChild="true">
+    <StackLayout dock="top" class='missions'>
+      <Button class="btn btnText" text="Nouveau Etablissement" (tap)="onClickNew('/profileEtab')"></Button>
+    </StackLayout>
+    <StackLayout dock="top" class='missions'>
+      <app-missions class='missions' [missions]='missions'></app-missions>
+    </StackLayout>
+
+  </DockLayout>

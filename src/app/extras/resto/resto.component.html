@@ -1,0 +1,105 @@
+
+
+
+  <div class="container">
+    <div class="row"> 
+
+      <div class="col-sm-12 text-center">
+        
+        <h3 class="h3">Mes  missions </h3>
+        <h4 class="h4">Ici, tu créés tes missions !</h4>
+        <br>
+        <p class="info-text mat-body-1"
+          *ngIf="missions?.length <= 0">Vous n'avez aucune mission pour le moment !</p>
+        
+
+      <!-- PREMIER MAT-ACCORDION -->
+      <mat-expansion-panel *ngFor="let mission of missions">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ mission.intitule }}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ mission.commentaire }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        
+        <div class="container-fluid">
+          <div class="row">
+      
+            <!-- COLONNE 1 -->
+            <div class="col-sm-4 text-center">
+              <p>Lieu : {{ mission.lieu }}</p>
+            </div>
+            <div class="col-sm-4 text-center">
+              <p>Date : {{ mission.date }}</p>
+            </div>
+            <div class="col-sm-4 text-center">
+              <p>Durée : {{ mission.duree }}</p>
+            </div>
+          
+          </div>
+        </div>
+
+        <mat-action-row>
+          <button mat-button (click)="onSubmit()">Click me</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+      </div>
+
+      
+
+
+    </div>
+  </div>
+  <p></p>
+  
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <a class="submit btn  align-center" (click)="onTestRefresh()">test refresh token</a>
+        </div>
+      </div>       
+    
+        
+
+  <!-- fin-->
+
+
+  <!-- SECOND MAT-ACCORDION -->
+
+   <!-- <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          This is the expansion title
+        </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+   
+      <p>This is the primary content of the panel.</p>
+   
+      <mat-action-row>
+        <button mat-button>Click me</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          This is the expansion title
+        </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+   
+      <p>This is the primary content of the panel.</p>
+   
+      <mat-action-row>
+        <button mat-button>Click me</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  <mat-accordion> -->
+
