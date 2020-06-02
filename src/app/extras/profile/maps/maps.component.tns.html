@@ -1,0 +1,35 @@
+
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:map="nativescript-mapbox"
+    (navigatedFrom)="onNavigatedFrom()"
+      (navigatedTo)="onNavigatedTo()"
+      (loaded)="onPageLoaded()"
+      (navigatingFrom)="onNavigatingFrom()"
+      (navigatingTo)="onNavigatingTo()"
+      (unloaded)="onUnloaded()"
+      (layoutChanged)="onLayoutChanged()">
+
+<app-action-bar
+  title="Location"
+  [hasMenu]="true"
+></app-action-bar>
+
+<StackLayout>
+<Label text="nice Map"></Label>
+  <GridLayout>
+    <ContentView height="100%" width="100%">
+      <!-- IMPORTANT: plugin version 3 uses :MapboxView, lower versions use :Mapbox -->
+      <map:Mapbox
+        #map
+        accessToken="pk.eyJ1IjoidG9ueWh1Z2hlcyIsImEiOiJjazRmcWRoMHowYWFiM2dueHg5dmxwanR4In0.sM-BO4BD5RPHAFcLjHTvng"
+        mapStyle="traffic_day"
+
+        zoomLevel="10"
+        animated="true"
+        (mapReady)="onMapReady($event)"
+        >
+      </map:Mapbox>
+    </ContentView>
+  </GridLayout>
+</StackLayout>
+</Page>

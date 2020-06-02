@@ -1,0 +1,30 @@
+
+<StackLayout>
+    <TabView androidTabsPosition="bottom">
+    <StackLayout>
+    <Button text="just testing"></Button>
+    <app-action-bar
+      [title]="title"
+      [hasMenu]="true"
+    ></app-action-bar>
+    <Button text="just testing"></Button>
+    </StackLayout>
+      <StackLayout *tabItem="{ title: 'Profile', iconSource: 'res://check' }">
+        <page-router-outlet name="profile"> </page-router-outlet>
+      </StackLayout>
+      <StackLayout
+        *tabItem="{ title: 'Adresse', iconSource: 'res://trophy' }"
+      >
+        <page-router-outlet name="adresse"> </page-router-outlet>
+      </StackLayout>
+      <StackLayout
+      *tabItem="{ title: 'Location', iconSource: 'res://trophy' }"
+    >
+      <page-router-outlet name="location"> </page-router-outlet>
+    </StackLayout>
+    </TabView>
+    <FlexboxLayout justifyContent="center" alignItems="center">
+      <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
+    </FlexboxLayout>
+    </StackLayout>
+    

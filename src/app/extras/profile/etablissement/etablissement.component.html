@@ -1,0 +1,60 @@
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12 text-center">
+          <h3 class="h3">Créer un établissement</h3>
+          <p>Merci de renseigner votre établissement</p>
+        </div>
+     </div>
+     
+    <div class="row">
+        <!-- COLONNE 1 -->
+       
+        
+
+        <div class="form_etablissement col-sm-6 text-center">
+            <form [formGroup]=form class="form-group">
+                                    
+               
+                <input class="form-control" (input)="onDone()" type="text" id="enseigne" placeholder="Nom de l'établissement" formControlName="inputEnseigne">
+                <input class="form-control" (input)="onDone()" type="text" id="ville" placeholder="ville" formControlName="inputVille">
+                <app-categories-corporation [value]="" (newCorporationCat)="onCorporation($event)"></app-categories-corporation><br>
+                <input class="form-control" (input)="onDone()" type="text" id="phonefix" placeholder="Téléphone fixe de l'établissement" formControlName="inputPhonefix">
+                <p>Gérant: <select (click)="onInput($event)" class="form-control" list="gerant_mail" name="gerant_mail">
+                    
+                      <option [value]="gerant" *ngFor="let gerant of GerantList">{{ gerant.email }}</option>
+                    
+                    </select>   
+               
+            </form>   
+        </div> 
+        
+        <div class="form_etablissement col-sm-6 text-center">
+            <form [formGroup]=form class="form-group">
+
+                <input class="form-control" (input)="onDone()" type="text" id="num" placeholder="n°" formControlName="inputNum">
+                <input class="form-control" (input)="onDone()" type="text" id="nom_voie" placeholder="nom de la voie" formControlName="inputRue">
+                <label class="col" *ngIf="!form.controls['inputRue'].valid">Le nom de la rue n'est pas valide</label>
+                
+                <input class="form-control" (input)="onDone()" type="text" id="code_postal" placeholder="code postal" formControlName="inputCP">
+                <label class="col" *ngIf="!form.controls['inputCP'].valid">Le code postal n'est pas valide</label>
+                <!-- <div class="col-sm-4 center-block" *ngIf="this.auth.isExtra()"></div> -->
+
+                <input class="form-control" (input)="onDone()" type="text" id="ville" placeholder="ville" formControlName="inputVille">
+                <br>
+                <button class="center-block" type="submit" class="btn btn-default" (click)="onSubmit()">valider</button>
+
+            </form>
+
+            
+
+        </div>
+        
+        
+
+    </div>
+</div>
+       
+
+

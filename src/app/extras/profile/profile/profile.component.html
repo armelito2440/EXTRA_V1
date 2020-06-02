@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    
+    <div class="row">
+        <div class="col-sm-12 text-center">
+          <h3 class="h3">S'inscrire</h3>
+          <a href="auth">Déjà un compte ? Connectez-vous !</a>
+        </div>
+     </div> 
+
+    <div class="row">
+      <!-- COLONNE 1 -->
+      <div class="col-sm-4"></div>
+      
+      <!-- COLONNE 2 -->
+      <div class="col-sm-4 text-center"> 
+        <app-telephon [userId]="userId" (newTelephone)="onChangePhone($event)"></app-telephon>
+        <app-address [userId]="userId" (newAddress)="onChangeAdress($event)"></app-address>
+        <button type="submit" class="btn btn-default" (click)="onSubmit()">valider</button>
+        
+
+
+      <!-- COLONNE 3 -->  
+      <div class="col-sm-4"></div>
+
+      </div>
+    </div>
+
+
+
